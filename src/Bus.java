@@ -1,22 +1,22 @@
-import transport.Transport;
 
-public class Bus extends Transport {
-    @Override
-    public void refill() {
-        System.out.println("Можно заправлять бензином или дизелем на заправке.");
-    }
-
-    public Bus(String brand, String model, String productionYear,
-               String productionCountry, String color, int maxSpeed) {
-        super(brand, model, productionYear, productionCountry,
-                color, maxSpeed);
+public class Bus extends Car implements Competing{
+    public Bus(String brand, String model, double engineVolume, Boolean movement,Character category) {
+        super(brand, model, engineVolume, movement, category);
     }
 
     @Override
-    public String toString() {
-        return "Автобус " + getBrand() + ", модель " + getModel() + " цвет " + getColor() +
-                " изготовлен в " + getProductionCountry() + " в " + getProductionYear() +
-                ", скорость " + getMaxSpeed() +
-                " км/ч ";
+    public void PitStop() {
+        System.out.println("Автобус заехал в пит-стоп.");
     }
+
+    @Override
+    public void BestLapTime() {
+        System.out.println("Лучший круг у автобуса - 2 минуты.");
+    }
+
+    @Override
+    public void MaxSpeed() {
+        System.out.println("Максимальная скорость у автобуса 120 км/ч.");
+    }
+
 }
