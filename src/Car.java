@@ -8,12 +8,12 @@ public class Car  {
 
     public Car(String brand, String model, double engineVolume, Boolean movement, Character category) {
         this.category = category;
-        if (brand == null || brand.isEmpty() || brand.isBlank()) {
+        if (brand == null || brand.isBlank()) {
             this.brand = "default";
         } else {
             this.brand = brand;
         }
-        if (model == null || model.isEmpty() || model.isBlank()) {
+        if (model == null || model.isBlank()) {
             this.model = "default";
         } else {
             this.model = model;

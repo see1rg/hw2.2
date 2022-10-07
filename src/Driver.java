@@ -3,11 +3,10 @@ public class Driver<T extends Car> {
     private Boolean driverLicence;
     private int experience;
     private Character category;
-    private Driver driver;
     private T transport;
 
     public Driver(String fullName, Boolean driverLicence, int experience, Character category, T transport) {
-        if (fullName == null || fullName.isEmpty() || fullName.isBlank()) {
+        if (fullName == null || fullName.isBlank()) {
             this.fullName = "default";
         } else {
             this.fullName = fullName;
@@ -22,42 +21,42 @@ public class Driver<T extends Car> {
         } else {
         this.experience = experience;}
         this.category = category;
-        setCar(transport);
+        this.transport=transport;
     }
 
-    private void setCar(T transport) {
-        boolean c;
-        switch (getCategory()){
-            case 'B':
-                c = transport instanceof PassengerCars;
-                break;
-            case 'C':
-                c = transport instanceof Trucks;
-                break;
-                case 'D':
-                c = transport instanceof Bus;
-                break;
-            default:
-                c = false;
+//    private void setCar(T transport) {
+//        boolean c;
+//        switch (getCategory()){
+//            case 'B':
+//                c = transport instanceof PassengerCar;
+//                break;
+//            case 'C':
+//                c = transport instanceof Truck;
+//                break;
+//                case 'D':
+//                c = transport instanceof Bus;
+//                break;
+//            default:
+//                c = false;
+//
+//        }
+//        if (c) {
+//            this.transport = transport;
+//        }else {
+//            throw new IllegalArgumentException(getFullName() + " нет прав для управления транспортом этой категории.");
+//        }
+//    }
 
-        }
-        if (c) {
-            this.transport = transport;
-        }else {
-            throw new IllegalArgumentException(getFullName() + " нет прав для управления транспортом этой категории.");
-        }
+    public void startMovement(Car brand) {
+        System.out.println("Водитель " + getFullName() + " начал движение на автомобиле " + brand.getBrand() + ".");
     }
 
-    public void startMovement() {
-        System.out.println("Водитель " + getFullName() + " начал движение.");
+    public void stopMovement(Car brand) {
+        System.out.println("Водитель " + getFullName() + " прекратил движение на автомобиле " + brand.getBrand() + ".");
     }
 
-    public void stopMovement() {
-        System.out.println("Водитель " + getFullName() + " прекратил движение.");
-    }
-
-    public void refill() {
-        System.out.println("Водитель " + getFullName() + " заправил машину.");
+    public void refill(Car brand) {
+        System.out.println("Водитель " + getFullName() + " заправил машину " + brand.getBrand() + ".");
     }
 
     public String getFullName() {
@@ -83,10 +82,6 @@ public class Driver<T extends Car> {
     public Character getCategory() {
         return category;
     }
-
-//    public Driver getDriver() {
-//        return driver;
-//    }
 
     public void setExperience(int experience) {
         this.experience = experience;

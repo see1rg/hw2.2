@@ -1,23 +1,22 @@
-public class PassengerCars extends Car implements Competing{
+public class PassengerCar extends Car implements Competing{
 
-    public PassengerCars(String brand, String model, double engineVolume, Boolean movement, Character category) {
+    public PassengerCar(String brand, String model, double engineVolume, Boolean movement, Character category) {
         super(brand, model, engineVolume, movement, category);
     }
 
 
-
     @Override
-    public void PitStop() {
+    public void pitStop() {
         System.out.println("Легковая машина заехала в пит-стоп.");
     }
 
     @Override
-    public void BestLapTime() {
+    public void bestLapTime() {
         System.out.println("Лучший круг у легковой машины - 4 минуты.");
     }
 
     @Override
-    public void MaxSpeed() {
+    public void maxSpeed() {
         System.out.println("Максимальная скорость у легковой машины 220 км/ч.");
     }
 

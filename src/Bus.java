@@ -5,17 +5,17 @@ public class Bus extends Car implements Competing{
     }
 
     @Override
-    public void PitStop() {
+    public void pitStop() {
         System.out.println("Автобус заехал в пит-стоп.");
     }
 
     @Override
-    public void BestLapTime() {
+    public void bestLapTime() {
         System.out.println("Лучший круг у автобуса - 2 минуты.");
     }
 
     @Override
-    public void MaxSpeed() {
+    public void maxSpeed() {
         System.out.println("Максимальная скорость у автобуса 120 км/ч.");
     }
 

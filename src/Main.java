@@ -11,34 +11,34 @@ public class Main {
         Bus sanYong = new Bus("SanYong", "d321", 2.8,
                 false,'D');
 
-        Trucks maz = new Trucks("Маз", "л-706",2.7 , false,'C');
-        Trucks man = new Trucks("Man","fg222",2.9 , false,'C');
-        Trucks kamaz = new Trucks("Камаз", "сс04",2.0 , false,'C');
-        Trucks tatra = new Trucks("d-091","201",2.5 , false,'C');
+        Truck maz = new Truck("Маз", "л-706",2.7 , false,'C');
+        Truck man = new Truck("Man","fg222",2.9 , false,'C');
+        Truck kamaz = new Truck("Камаз", "сс04",2.0 , false,'C');
+        Truck tatra = new Truck("d-091","201",2.5 , false,'C');
 
-        PassengerCars ford = new PassengerCars("ford", "focus", 1.6,
+        PassengerCar ford = new PassengerCar("ford", "focus", 1.6,
                 false,'B');
-        PassengerCars bmw = new PassengerCars("bmw", "720",2.0 ,
+        PassengerCar bmw = new PassengerCar("bmw", "720",2.0 ,
                 false,'B');
-        PassengerCars audi = new PassengerCars("audi", "a7",6.0 ,
+        PassengerCar audi = new PassengerCar("audi", "a7",6.0 ,
                 false,'B');
-        PassengerCars dodge = new PassengerCars("dodge", "viper", 2.2,
+        PassengerCar dodge = new PassengerCar("dodge", "viper", 2.2,
                 false,'B');
 
-        maz.BestLapTime();
-        audi.MaxSpeed();
-        ikarus.PitStop();
+        maz.bestLapTime();
+        audi.maxSpeed();
+        ikarus.pitStop();
 
-        Driver valera = new Driver<>("Valera", true, 4, 'C', kamaz);
-        Driver fedya = new Driver<>("Fedya", true, 2, 'B', bmw);
-        Driver ivan = new Driver<>("Ivan", true, 1, 'D', lviv);
+        Driver<Truck> valera = new Driver<>("Valera", true, 4, 'C', kamaz);
+        Driver<PassengerCar> fedya = new Driver<>("Fedya", true, 2, 'B', bmw);
+        Driver<Bus> ivan = new Driver<>("Ivan", true, 1, 'D', lviv);
 
         System.out.println("Водитель " + valera.getFullName() + " управляет автомобилем "
                 + kamaz.getBrand() + " и будет участвовать в заезде.");
 
-        ivan.startMovement();
-        fedya.stopMovement();
-        valera.refill();
+        ivan.startMovement(lviv);
+        fedya.stopMovement(bmw);
+        valera.refill(kamaz);
 
 }
 }
