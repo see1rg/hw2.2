@@ -40,5 +40,6 @@ public class Main {
         fedya.stopMovement(bmw);
         valera.refill(kamaz);
 
+
 }
 }

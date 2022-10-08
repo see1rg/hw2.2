@@ -47,16 +47,18 @@ public class Driver<T extends Car> {
 //        }
 //    }
 
-    public void startMovement(Car brand) {
-        System.out.println("Водитель " + getFullName() + " начал движение на автомобиле " + brand.getBrand() + ".");
+    public void startMovement(T Car) {
+        System.out.println("Водитель " + getFullName()  + " начал движение на автомобиле " + Car.getBrand() + ".");
+        Car.startMovement();
     }
 
-    public void stopMovement(Car brand) {
-        System.out.println("Водитель " + getFullName() + " прекратил движение на автомобиле " + brand.getBrand() + ".");
+    public void stopMovement(T Car) {
+        System.out.println("Водитель " + getFullName() + " прекратил движение на автомобиле " + Car.getBrand() + ".");
+        Car.stopMovement();
     }
 
-    public void refill(Car brand) {
-        System.out.println("Водитель " + getFullName() + " заправил машину " + brand.getBrand() + ".");
+    public void refill(T Car) {
+        System.out.println("Водитель " + getFullName() + " заправил машину " + Car.getBrand() + ".");
     }
 
     public String getFullName() {
