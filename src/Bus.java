@@ -1,8 +1,9 @@
 
-public class Bus extends Car implements Competing{
+public class Bus extends Car implements Competing {
 
     private Capacity capacity;
-    public Bus(String brand, String model, double engineVolume, Boolean movement,Character category, Capacity capacity) {
+
+    public Bus(String brand, String model, double engineVolume, Boolean movement, Character category, Capacity capacity) {
         super(brand, model, engineVolume, movement, category);
         this.capacity = capacity;
     }
@@ -32,7 +33,10 @@ public class Bus extends Car implements Competing{
 
     @Override
     public void printType() {
-        System.out.println("Вместимость пассажиров у автобуса " + getBrand() + " составляет " + getCapacity().getDescription());
+        if (getBrand() == null || getCapacity().getDescription() == null) {
+            System.out.println("Данных не достаточно.");
+        } else {
+            System.out.println("Вместимость пассажиров у автобуса " + getBrand() + " составляет " + getCapacity().getDescription());
+        }
     }
-
 }

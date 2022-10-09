@@ -1,7 +1,8 @@
-public class PassengerCar extends Car implements Competing{
+public class PassengerCar extends Car implements Competing {
 
     private TypeOfBody typeOfBody;
-    public PassengerCar(String brand, String model, double engineVolume, Boolean movement, Character category,TypeOfBody typeOfBody) {
+
+    public PassengerCar(String brand, String model, double engineVolume, Boolean movement, Character category, TypeOfBody typeOfBody) {
         super(brand, model, engineVolume, movement, category);
         this.typeOfBody = typeOfBody;
     }
@@ -29,9 +30,11 @@ public class PassengerCar extends Car implements Competing{
         System.out.println("Максимальная скорость у легковой машины 220 км/ч.");
     }
 
-
     public void printType() {
-        System.out.println("Тип кузова авто " + getBrand() + " это " + typeOfBody.getTypeOfBody() );
+        if (getBrand() == null || typeOfBody.getTypeOfBody() == null) {
+            System.out.println("Данных не достаточно.");
+        } else {
+            System.out.println("Тип кузова авто " + getBrand() + " это " + typeOfBody.getTypeOfBody());
+        }
     }
-
 }

@@ -17,11 +17,12 @@ public class Driver<T extends Car> {
             this.driverLicence = driverLicence;
         }
         if (experience == 0.0) {
-            throw new IllegalArgumentException ("У водителя " + getFullName() +  " нет опыта управления транспортом данной категории и он не может быть допущен.");
+            throw new IllegalArgumentException("У водителя " + getFullName() + " нет опыта управления транспортом данной категории и он не может быть допущен.");
         } else {
-        this.experience = experience;}
+            this.experience = experience;
+        }
         this.category = category;
-        this.transport=transport;
+        this.transport = transport;
     }
 
 //    private void setCar(T transport) {
@@ -48,7 +49,7 @@ public class Driver<T extends Car> {
 //    }
 
     public void startMovement(T Car) {
-        System.out.println("Водитель " + getFullName()  + " начал движение на автомобиле " + Car.getBrand() + ".");
+        System.out.println("Водитель " + getFullName() + " начал движение на автомобиле " + Car.getBrand() + ".");
         Car.startMovement();
     }
 

@@ -1,5 +1,5 @@
 
-public class Car  {
+public class Car {
     private String brand;
     private String model;
     private double engineVolume;
@@ -26,17 +26,18 @@ public class Car  {
         this.movement = movement;
     }
 
-    public void startMovement(){
-        if (!movement){
+    public void startMovement() {
+        if (!movement) {
             this.movement = true;
         }
     }
 
-    public void stopMovement(){
-        if (movement){
+    public void stopMovement() {
+        if (movement) {
             this.movement = false;
         }
     }
+
     public void setEngineVolume(double engineVolume) {
         this.engineVolume = engineVolume;
     }

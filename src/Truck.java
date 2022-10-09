@@ -1,8 +1,4 @@
-import java.util.Arrays;
-
-public class Truck extends Car implements Competing{
-
-
+public class Truck extends Car implements Competing {
 
     private Weight weight;
 
@@ -36,8 +32,10 @@ public class Truck extends Car implements Competing{
 
     @Override
     public void printType() {
-        System.out.println("Грузоподъемность авто " + getBrand() + " " + weight.getWeight());
+        if (getBrand() == null || weight.getWeight() == null) {
+            System.out.println("Данных не достаточно.");
+        } else {
+            System.out.println("Грузоподъемность авто " + getBrand() + " " + weight.getWeight());
+        }
     }
-
-
 }
