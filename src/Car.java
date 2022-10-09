@@ -31,6 +31,7 @@ public class Car  {
             this.movement = true;
         }
     }
+
     public void stopMovement(){
         if (movement){
             this.movement = false;
