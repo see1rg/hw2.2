@@ -1,4 +1,5 @@
-public enum TypeOfBody {SEDAN("седан"),
+public enum TypeOfBody {
+    SEDAN("седан"),
     HATCHBACK("хетчбэк"),
     COUPE("купе"),
     ESTATE("универсал"),
@@ -18,7 +19,6 @@ public enum TypeOfBody {SEDAN("седан"),
     public String getTypeOfBody() {
         return typeOfBody;
     }
-
 
 
 }

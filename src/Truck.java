@@ -39,9 +39,7 @@ public class Truck extends Car implements Competing {
         }
     }
 
-    @Override
-    public Boolean passDiagnostics() {
-//        return Math.random()>0.5;
-        return false;
+    public boolean passDiagnostics() {
+        return Math.random() > 0.5;
     }
 }

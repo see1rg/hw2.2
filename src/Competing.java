@@ -7,7 +7,4 @@ public interface Competing {
     void maxSpeed();
 
     void printType();
-
-    Boolean passDiagnostics();
-
 }

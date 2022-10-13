@@ -1,5 +1,5 @@
 
-public class Car {
+public abstract class Car {
     private String brand;
     private String model;
     private double engineVolume;
@@ -78,21 +78,8 @@ public class Car {
         this.category = category;
     }
 
-    public static boolean passDiagnostics(Car... cars) throws RuntimeException {
-        for (Car car : cars) {
-            checkDiagnostics(car);
-        }
-        return true;
-    }
+    public abstract boolean passDiagnostics();
 
-    public static void checkDiagnostics(Car car) {
-        try {
-            if (!car.passDiagnostics()) {
-                throw new RuntimeException("Автомобиль " + car.getBrand() + "  " + " не прошел диагностику.");
-            }
-        } catch (RuntimeException e) {
-            System.out.println(e.getMessage());
-        }
-    }
+
 }
 

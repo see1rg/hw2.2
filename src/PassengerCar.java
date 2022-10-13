@@ -39,8 +39,7 @@ public class PassengerCar extends Car implements Competing {
         }
     }
 
-    @Override
-    public Boolean passDiagnostics() {
-        return Math.random()>0.5;
+    public boolean passDiagnostics() {
+       return Math.random() > 0.5;
     }
 }

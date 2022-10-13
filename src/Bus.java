@@ -42,10 +42,8 @@ public class Bus extends Car implements Competing {
         }
     }
 
-    @Override
-    public Boolean passDiagnostics() {
+    public boolean passDiagnostics() {
         System.out.println("Автобусу " + getBrand() + " диагностика не требуется");
-        return true; }
-
-
+        return true;
+    }
 }
