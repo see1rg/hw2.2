@@ -49,5 +49,7 @@ public class Main {
         dodge.printType();
         liaz.printType();
 
+        Car.passDiagnostics(ikarus,lviv,liaz,sanYong,man,maz,kamaz,tatra,ford,bmw,audi,dodge);
+
     }
 }

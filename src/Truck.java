@@ -38,4 +38,10 @@ public class Truck extends Car implements Competing {
             System.out.println("Грузоподъемность авто " + getBrand() + " " + weight.getWeight());
         }
     }
+
+    @Override
+    public Boolean passDiagnostics() {
+//        return Math.random()>0.5;
+        return false;
+    }
 }

@@ -77,5 +77,22 @@ public class Car {
     public void setCategory(Character category) {
         this.category = category;
     }
+
+    public static boolean passDiagnostics(Car... cars) throws RuntimeException {
+        for (Car car : cars) {
+            checkDiagnostics(car);
+        }
+        return true;
+    }
+
+    public static void checkDiagnostics(Car car) {
+        try {
+            if (!car.passDiagnostics()) {
+                throw new RuntimeException("Автомобиль " + car.getBrand() + "  " + " не прошел диагностику.");
+            }
+        } catch (RuntimeException e) {
+            System.out.println(e.getMessage());
+        }
+    }
 }
 

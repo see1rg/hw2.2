@@ -8,4 +8,6 @@ public interface Competing {
 
     void printType();
 
+    Boolean passDiagnostics();
+
 }

@@ -3,7 +3,8 @@ public class Bus extends Car implements Competing {
 
     private Capacity capacity;
 
-    public Bus(String brand, String model, double engineVolume, Boolean movement, Character category, Capacity capacity) {
+    public Bus(String brand, String model, double engineVolume, Boolean movement, Character category,
+               Capacity capacity) {
         super(brand, model, engineVolume, movement, category);
         this.capacity = capacity;
     }
@@ -36,7 +37,15 @@ public class Bus extends Car implements Competing {
         if (getBrand() == null || getCapacity().getDescription() == null) {
             System.out.println("Данных не достаточно.");
         } else {
-            System.out.println("Вместимость пассажиров у автобуса " + getBrand() + " составляет " + getCapacity().getDescription());
+            System.out.println("Вместимость пассажиров у автобуса " + getBrand() + " составляет "
+                    + getCapacity().getDescription());
         }
     }
+
+    @Override
+    public Boolean passDiagnostics() {
+        System.out.println("Автобусу " + getBrand() + " диагностика не требуется");
+        return true; }
+
+
 }

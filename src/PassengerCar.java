@@ -2,7 +2,8 @@ public class PassengerCar extends Car implements Competing {
 
     private TypeOfBody typeOfBody;
 
-    public PassengerCar(String brand, String model, double engineVolume, Boolean movement, Character category, TypeOfBody typeOfBody) {
+    public PassengerCar(String brand, String model, double engineVolume, Boolean movement,
+                        Character category, TypeOfBody typeOfBody) {
         super(brand, model, engineVolume, movement, category);
         this.typeOfBody = typeOfBody;
     }
@@ -36,5 +37,10 @@ public class PassengerCar extends Car implements Competing {
         } else {
             System.out.println("Тип кузова авто " + getBrand() + " это " + typeOfBody.getTypeOfBody());
         }
+    }
+
+    @Override
+    public Boolean passDiagnostics() {
+        return Math.random()>0.5;
     }
 }

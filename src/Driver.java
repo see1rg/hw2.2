@@ -12,12 +12,14 @@ public class Driver<T extends Car> {
             this.fullName = fullName;
         }
         if (driverLicence == false) {
-            throw new IllegalArgumentException("У водителя " + getFullName() + " нет прав и он не может быть допущен.");
+            throw new IllegalArgumentException("У водителя " + getFullName() +
+                    " нет прав и он не может быть допущен.");
         } else {
             this.driverLicence = driverLicence;
         }
         if (experience == 0.0) {
-            throw new IllegalArgumentException("У водителя " + getFullName() + " нет опыта управления транспортом данной категории и он не может быть допущен.");
+            throw new IllegalArgumentException("У водителя " + getFullName() +
+                    " нет опыта управления транспортом данной категории и он не может быть допущен.");
         } else {
             this.experience = experience;
         }
