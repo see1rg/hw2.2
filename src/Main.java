@@ -20,13 +20,13 @@ public class Main {
         Truck tatra = new Truck("d-091", "201", 2.5,
                 false, 'C', Weight.N3);
 
-        PassengerCar ford = new PassengerCar("ford", "focus", 1.6,
+        PassengerTransport ford = new PassengerTransport("ford", "focus", 1.6,
                 false, 'B', TypeOfBody.HATCHBACK);
-        PassengerCar bmw = new PassengerCar("bmw", "720", 2.0,
+        PassengerTransport bmw = new PassengerTransport("bmw", "720", 2.0,
                 false, 'B', TypeOfBody.COUPE);
-        PassengerCar audi = new PassengerCar("audi", "a7", 6.0,
+        PassengerTransport audi = new PassengerTransport("audi", "a7", 6.0,
                 false, 'B', TypeOfBody.COUPE);
-        PassengerCar dodge = new PassengerCar("dodge", "viper", 2.2,
+        PassengerTransport dodge = new PassengerTransport("dodge", "viper", 2.2,
                 false, 'B', TypeOfBody.VAN);
 
 
@@ -35,7 +35,7 @@ public class Main {
         ikarus.pitStop();
 
         Driver<Truck> valera = new Driver<>("Valera", true, 4, 'C', kamaz);
-        Driver<PassengerCar> fedya = new Driver<>("Fedya", true, 2, 'B', bmw);
+        Driver<PassengerTransport> fedya = new Driver<>("Fedya", true, 2, 'B', bmw);
         Driver<Bus> ivan = new Driver<>("Ivan", true, 1, 'D', lviv);
 
         System.out.println("Водитель " + valera.getFullName() + " управляет автомобилем "
@@ -53,16 +53,16 @@ public class Main {
 
     }
 
-    public static boolean passDiagnostics(Car... cars) throws RuntimeException {
-        for (Car car : cars) {
-            checkDiagnostics(car);
+    public static boolean passDiagnostics(Transport... transports) throws RuntimeException {
+        for (Transport transport : transports) {
+            checkDiagnostics(transport);
         }
         return true;
     }
-    public static void checkDiagnostics(Car car) {
+    public static void checkDiagnostics(Transport transport) {
         try {
-            if (!car.passDiagnostics()) {
-                throw new RuntimeException("Автомобиль " + car.getBrand() + "  " + " не прошел диагностику.");
+            if (!transport.passDiagnostics()) {
+                throw new RuntimeException("Автомобиль " + transport.getBrand() + "  " + " не прошел диагностику.");
             }
         } catch (RuntimeException e) {
             System.out.println(e.getMessage());

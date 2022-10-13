@@ -1,4 +1,4 @@
-public class Truck extends Car implements Competing {
+public class Truck extends Transport implements Competing {
 
     private Weight weight;
 

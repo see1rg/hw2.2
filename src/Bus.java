@@ -1,5 +1,5 @@
 
-public class Bus extends Car implements Competing {
+public class Bus extends Transport implements Competing {
 
     private Capacity capacity;
 

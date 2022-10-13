@@ -1,4 +1,4 @@
-public class Driver<T extends Car> {
+public class Driver<T extends Transport> {
     private String fullName;
     private Boolean driverLicence;
     private int experience;

@@ -1,9 +1,9 @@
-public class PassengerCar extends Car implements Competing {
+public class PassengerTransport extends Transport implements Competing {
 
     private TypeOfBody typeOfBody;
 
-    public PassengerCar(String brand, String model, double engineVolume, Boolean movement,
-                        Character category, TypeOfBody typeOfBody) {
+    public PassengerTransport(String brand, String model, double engineVolume, Boolean movement,
+                              Character category, TypeOfBody typeOfBody) {
         super(brand, model, engineVolume, movement, category);
         this.typeOfBody = typeOfBody;
     }

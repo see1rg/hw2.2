@@ -1,12 +1,12 @@
 
-public abstract class Car {
+public abstract class Transport {
     private String brand;
     private String model;
     private double engineVolume;
     private Boolean movement;
     private Character category;
 
-    public Car(String brand, String model, double engineVolume, Boolean movement, Character category) {
+    public Transport(String brand, String model, double engineVolume, Boolean movement, Character category) {
         this.category = category;
         if (brand == null || brand.isBlank()) {
             this.brand = "default";
