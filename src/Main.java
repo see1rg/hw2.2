@@ -1,3 +1,7 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class Main {
     public static void main(String[] args) {
@@ -30,6 +34,14 @@ public class Main {
                 false, 'B', TypeOfBody.VAN);
 
 
+        Transport[] transportsArray = {
+                bmw, ford, audi, dodge,
+                tatra, kamaz, man, maz,
+                ikarus, lviv, liaz, sanYong
+        };
+
+        ArrayList<Transport> transportList = new ArrayList<>(Arrays.asList(transportsArray));
+
         maz.bestLapTime();
         audi.maxSpeed();
         ikarus.pitStop();
@@ -37,6 +49,14 @@ public class Main {
         Driver<Truck> valera = new Driver<>("Valera", true, 4, 'C', kamaz);
         Driver<PassengerTransport> fedya = new Driver<>("Fedya", true, 2, 'B', bmw);
         Driver<Bus> ivan = new Driver<>("Ivan", true, 1, 'D', lviv);
+
+        Mechanic<Truck> lesha = new Mechanic<>("Lesha", "ВТБ");
+        Mechanic<Bus> zhenya = new Mechanic<>("Zhenya", "Яндекс");
+        Mechanic<PassengerTransport> max = new Mechanic<>("Max", "Мечел");
+
+        Sponsor<Bus> vtb = new Sponsor<>("ВТБ", 230000);
+        Sponsor<PassengerTransport> yandex = new Sponsor<>("Яндекс", 3400000);
+        Sponsor<Truck> mechell = new Sponsor<>("Мечел", 29000);
 
         System.out.println("Водитель " + valera.getFullName() + " управляет автомобилем "
                 + kamaz.getBrand() + " и будет участвовать в заезде.");
@@ -49,9 +69,57 @@ public class Main {
         dodge.printType();
         liaz.printType();
 
-       passDiagnostics(ikarus, lviv, liaz, sanYong, man, maz, kamaz, tatra, ford, bmw, audi, dodge);
+        passDiagnostics(
+                ikarus, lviv, liaz, sanYong,
+                man, maz, kamaz, tatra, ford,
+                bmw, audi, dodge);
+
+        maz.addSponsor(vtb);
+        maz.addSponsor(yandex);
+        maz.addSponsor(mechell);
+
+        kamaz.addMechanic(lesha);
+        kamaz.addMechanic(zhenya);
+        kamaz.addMechanic(max);
+
+        sanYong.addDriver(valera);
+
+        System.out.println(maz.getSponsors());
+        System.out.println(kamaz.getMechanics());
+        System.out.println(sanYong.getDrivers());
+
+        ServiceStation serviceStation= new ServiceStation();
+        serviceStation.addTransportsToStation(maz);
+        serviceStation.service();
+
+        Queue <String> queue1 = new LinkedList<>();
+        Queue <String> queue2 = new LinkedList<>();
+        for (int i = 0; i < Math.floor(Math.random()*5 + 2); i++) {
+            queue1.offer("Mike " + i);}
+        for (int i = 0; i < Math.floor(Math.random()*5 + 2); i++) {
+            queue2.offer("John " + i);
+        }
+        addStringToQueue("Fred", queue1, queue2);
+
+        System.out.println(queue1);
+        System.out.println(queue2);
 
     }
+static void addStringToQueue( String name, Queue<String> q1, Queue<String> q2){
+      if (q1.size()== q2.size() && q1.size() == 5){
+          System.out.println("Галяяяяя");
+      }
+    if (q1.size() < q2.size()) {
+        q1.add(name);
+        return; }
+    if (q2.size() < q1.size()) {
+        q2.add(name);
+        return;}
+    if (q2.size() == q1.size()) {
+        q1.add(name);
+    }
+
+}
 
     public static boolean passDiagnostics(Transport... transports) throws RuntimeException {
         for (Transport transport : transports) {
@@ -59,6 +127,7 @@ public class Main {
         }
         return true;
     }
+
     public static void checkDiagnostics(Transport transport) {
         try {
             if (!transport.passDiagnostics()) {

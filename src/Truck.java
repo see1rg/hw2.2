@@ -2,7 +2,7 @@ public class Truck extends Transport implements Competing {
 
     private Weight weight;
 
-    public Truck(String brand, String model, double engineVolume, Boolean movement, Character category, Weight weight) {
+    public Truck(String brand, String model, double engineVolume, boolean movement, Character category, Weight weight) {
         super(brand, model, engineVolume, movement, category);
         this.weight = weight;
     }
@@ -42,4 +42,16 @@ public class Truck extends Transport implements Competing {
     public boolean passDiagnostics() {
         return Math.random() > 0.5;
     }
+
+    @Override
+    public boolean service() {
+       return Math.random() > 0.5;
+    }
+
+    @Override
+    public void fixCar() {
+        System.out.println("Автомобиль " + getBrand() + " починен.");
+    }
+
+
 }

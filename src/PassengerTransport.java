@@ -40,6 +40,16 @@ public class PassengerTransport extends Transport implements Competing {
     }
 
     public boolean passDiagnostics() {
-       return Math.random() > 0.5;
+        return Math.random() > 0.5;
+    }
+
+    @Override
+    public boolean service() {
+        return Math.random() > 0.5;
+    }
+
+    @Override
+    public void fixCar() {
+        System.out.println("Автомобиль " + getBrand() + " починен.");
     }
 }

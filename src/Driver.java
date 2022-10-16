@@ -1,11 +1,11 @@
 public class Driver<T extends Transport> {
     private String fullName;
-    private Boolean driverLicence;
+    private boolean driverLicence;
     private int experience;
     private Character category;
     private T transport;
 
-    public Driver(String fullName, Boolean driverLicence, int experience, Character category, T transport) {
+    public Driver(String fullName, boolean driverLicence, int experience, Character category, T transport) {
         if (fullName == null || fullName.isBlank()) {
             this.fullName = "default";
         } else {
@@ -50,18 +50,18 @@ public class Driver<T extends Transport> {
 //        }
 //    }
 
-    public void startMovement(T Car) {
-        System.out.println("Водитель " + getFullName() + " начал движение на автомобиле " + Car.getBrand() + ".");
-        Car.startMovement();
+    public void startMovement(T Transport) {
+        System.out.println("Водитель " + getFullName() + " начал движение на автомобиле " + Transport.getBrand() + ".");
+        Transport.startMovement();
     }
 
-    public void stopMovement(T Car) {
-        System.out.println("Водитель " + getFullName() + " прекратил движение на автомобиле " + Car.getBrand() + ".");
-        Car.stopMovement();
+    public void stopMovement(T Transport) {
+        System.out.println("Водитель " + getFullName() + " прекратил движение на автомобиле " + Transport.getBrand() + ".");
+        Transport.stopMovement();
     }
 
-    public void refill(T Car) {
-        System.out.println("Водитель " + getFullName() + " заправил машину " + Car.getBrand() + ".");
+    public void refill(T Transport) {
+        System.out.println("Водитель " + getFullName() + " заправил машину " + Transport.getBrand() + ".");
     }
 
     public String getFullName() {
@@ -76,7 +76,7 @@ public class Driver<T extends Transport> {
         return driverLicence;
     }
 
-    public void setDriverLicence(Boolean driverLicence) {
+    public void setDriverLicence(boolean driverLicence) {
         this.driverLicence = driverLicence;
     }
 
@@ -90,5 +90,16 @@ public class Driver<T extends Transport> {
 
     public void setExperience(int experience) {
         this.experience = experience;
+    }
+
+    @Override
+    public String toString() {
+        return "Driver{" +
+                "fullName='" + fullName + '\'' +
+                ", driverLicence=" + driverLicence +
+                ", experience=" + experience +
+                ", category=" + category +
+                ", transport=" + transport +
+                '}';
     }
 }
