@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -40,7 +37,7 @@ public class Main {
                 ikarus, lviv, liaz, sanYong
         };
 
-        ArrayList<Transport> transportList = new ArrayList<>(Arrays.asList(transportsArray));
+        Set<Transport> transportList = new HashSet<>(Arrays.asList(transportsArray));
 
         maz.bestLapTime();
         audi.maxSpeed();
